@@ -21,7 +21,7 @@ const Layout = ({ isHomePage, children }) => {
   return (
     <div className="global-wrapper" data-is-root-path={isHomePage}>
       <header className="global-header">
-        {isHomePage ? (
+        {/* {isHomePage ? (
           <h1 className="main-heading">
             <Link to="/">{parse(title)}</Link>
           </h1>
@@ -29,10 +29,20 @@ const Layout = ({ isHomePage, children }) => {
           <Link className="header-link-home" to="/">
             {title}
           </Link>
-        )}
+        )} */}
+        
       </header>
 
-      <main>{children}</main>
+      <div>
+    <nav>
+      <Link to="/">Home</Link>
+      <Link to="/about">About</Link>
+      {/* Add more navigation links as needed */}
+    </nav>
+    <main>{children}</main>
+  </div>
+
+
 
       <footer>
         © {new Date().getFullYear()}, Built with
@@ -40,7 +50,10 @@ const Layout = ({ isHomePage, children }) => {
         <a href="https://www.gatsbyjs.com">Gatsby</a>
         {` `}
         And <a href="https://wordpress.org/">WordPress</a>
+        {` `}
+         by <a href="https://www.linkedin.com/in/mdharrell//">Michael Harrell</a>
       </footer>
+
     </div>
   )
 }

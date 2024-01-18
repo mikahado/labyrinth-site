@@ -1,16 +1,19 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
 import parse from "html-react-parser"
+import { GatsbyImage } from "gatsby-plugin-image"
 
 import Bio from "../components/bio"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 
-const BlogIndex = ({
-  data,
-  pageContext: { nextPagePath, previousPagePath },
-}) => {
+const BlogIndex = ({ data, data: post }) => {
   const posts = data.allWpPost.nodes
+  
+  const featuredImage = {
+    data: post.featuredImage?.node?.localFile?.childImageSharp?.gatsbyImageData,
+    alt: post.featuredImage?.node?.alt || ``,
+  }
 
   if (!posts.length) {
     return (
@@ -18,8 +21,7 @@ const BlogIndex = ({
         <Seo title="All posts" />
         <Bio />
         <p>
-          No blog posts found. Add posts to your WordPress site and they'll
-          appear here!
+          No posts found. 
         </p>
       </Layout>
     )
@@ -28,42 +30,36 @@ const BlogIndex = ({
   return (
     <Layout isHomePage>
       <Seo title="All posts" />
-
       <Bio />
-
+      <h2>Archive of LGR posts</h2>
       <ol style={{ listStyle: `none` }}>
+
         {posts.map(post => {
-          const title = post.title
+          const title = post.title || "Untitled Post"
 
           return (
-            <li key={post.uri}>
-              <article
-                className="post-list-item"
-                itemScope
-                itemType="http://schema.org/Article"
-              >
-                <header>
-                  <h2>
-                    <Link to={post.uri} itemProp="url">
-                      <span itemProp="headline">{parse(title)}</span>
-                    </Link>
-                  </h2>
-                  <small>{post.date}</small>
-                </header>
-                <section itemProp="description">{parse(post.excerpt)}</section>
-              </article>
-            </li>
+           title && (
+              <li key={post.uri}>
+                <article
+                  className="post-list-item"
+                  itemScope
+                  itemType="http://schema.org/Article"
+                >
+                  <header>
+                    <h2>
+                      <Link to={post.uri} itemProp="url">
+                        <span itemProp="headline">{parse(title)}</span>
+                      </Link>
+                    </h2>
+                    <small>{post.date}</small>
+                  </header>
+
+                </article>
+              </li>
+            )
           )
         })}
       </ol>
-
-      {previousPagePath && (
-        <>
-          <Link to={previousPagePath}>Previous page</Link>
-          <br />
-        </>
-      )}
-      {nextPagePath && <Link to={nextPagePath}>Next page</Link>}
     </Layout>
   )
 }
@@ -71,15 +67,12 @@ const BlogIndex = ({
 export default BlogIndex
 
 export const pageQuery = graphql`
-  query WordPressPostArchive($offset: Int!, $postsPerPage: Int!) {
-    allWpPost(
-      sort: { fields: [date], order: DESC }
-      limit: $postsPerPage
-      skip: $offset
-    ) {
+  query WordPressPostArchive {
+    allWpPost(sort: { fields: [date], order: DESC }) {
       nodes {
         excerpt
         uri
+        content
         date(formatString: "MMMM DD, YYYY")
         title
         excerpt

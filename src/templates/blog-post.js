@@ -52,7 +52,7 @@ const BlogPostTemplate = ({ data: { previous, next, post } }) => {
         <hr />
 
         <footer>
-          <Bio />
+
         </footer>
       </article>
 

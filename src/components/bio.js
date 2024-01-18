@@ -34,7 +34,7 @@ const Bio = () => {
           src={avatarUrl}
         />
       )}
-      {author?.firstName && (
+      {/* {author?.firstName && (
         <p>
           Written by <strong>{author.firstName}</strong>
           {` `}
@@ -46,7 +46,7 @@ const Bio = () => {
             </a>
           )}
         </p>
-      )}
+      )} */}
     </div>
   )
 }
