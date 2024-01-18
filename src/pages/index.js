@@ -18,3 +18,25 @@ const HomePage = () => {
 }
 
 export default HomePage
+export const query = graphql`
+  query AllPosts {
+    allWpPost(sort: { fields: [date], order: DESC, count: 1 }) {
+      nodes {
+        id
+        title
+        uri
+        content
+        date(formatString: "MMMM DD, YYYY")
+        featuredImage {
+          node {
+            localFile {
+              childImageSharp {
+                gatsbyImageData
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+`;
