@@ -23,8 +23,7 @@ const EventsPage = ({ data }) => {
   return (
     <Layout isHomePage>
       <Seo title="All posts" />
-      <Bio />
-      <h2>Events</h2>
+      <h2>Archive of Events</h2>
       <ol style={{ listStyle: `none` }}>
         {posts.map(post => {
           const title = post.title || "Untitled Post";
@@ -46,14 +45,14 @@ const EventsPage = ({ data }) => {
                     <small>{post.date}</small>
                   </header>
 
-                  <div>{parse(String(post.content))}</div>
+                  {/* <div>{parse(String(post.content))}</div> */}
 
-                  {post.featuredImage?.node?.localFile?.childImageSharp?.gatsbyImageData && (
+                  {/* {post.featuredImage?.node?.localFile?.childImageSharp?.gatsbyImageData && (
                     <GatsbyImage
                       image={post.featuredImage.node.localFile.childImageSharp.gatsbyImageData}
                       alt={post.featuredImage.node.alt || ""}
                     />
-                  )}
+                  )} */}
                   {/* Add more elements as needed */}
                 </article>
               </li>
@@ -69,7 +68,7 @@ export default EventsPage;
 
 export const query = graphql`
   query AllPosts {
-    allWpPost(sort: { fields: [date], order: DESC }, limit: 5) {
+    allWpPost(sort: { fields: [date], order: DESC }) {
       nodes {
         id
         title

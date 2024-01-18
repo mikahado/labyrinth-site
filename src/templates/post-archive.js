@@ -1,30 +1,44 @@
 import React from "react"
-import { Link, graphql } from "gatsby"
+import { Link } from "gatsby"
 import parse from "html-react-parser"
 import { GatsbyImage } from "gatsby-plugin-image"
+import { useStaticQuery, graphql } from "gatsby"
 
 import Bio from "../components/bio"
 import Layout from "../components/Layout"
 import Seo from "../components/seo"
 
-const BlogIndex = ({ data, data: post }) => {
-  const posts = data.allWpPost.nodes
-  
+const BlogIndex = () => {
+  const data = useStaticQuery(graphql`
+    query WordPressPostArchive {
+      allWpPost(sort: { fields: [date], order: DESC }) {
+        nodes {
+          excerpt
+          uri
+          content
+          date(formatString: "MMMM DD, YYYY")
+          title
+          excerpt
+        }
+      }
+    }
+  `);
+
+  const posts = data.allWpPost.nodes;
+
   const featuredImage = {
-    data: post.featuredImage?.node?.localFile?.childImageSharp?.gatsbyImageData,
-    alt: post.featuredImage?.node?.alt || ``,
-  }
+    data: posts[0]?.featuredImage?.node?.localFile?.childImageSharp?.gatsbyImageData,
+    alt: posts[0]?.featuredImage?.node?.alt || ``,
+  };
 
   if (!posts.length) {
     return (
       <Layout isHomePage>
         <Seo title="All posts" />
         <Bio />
-        <p>
-          No posts found. 
-        </p>
+        <p>No posts found.</p>
       </Layout>
-    )
+    );
   }
 
   return (
@@ -33,12 +47,11 @@ const BlogIndex = ({ data, data: post }) => {
       <Bio />
       <h2>Archive of LGR posts</h2>
       <ol style={{ listStyle: `none` }}>
-
         {posts.map(post => {
-          const title = post.title || "Untitled Post"
+          const title = post.title || "Untitled Post";
 
           return (
-           title && (
+            title && (
               <li key={post.uri}>
                 <article
                   className="post-list-item"
@@ -53,30 +66,14 @@ const BlogIndex = ({ data, data: post }) => {
                     </h2>
                     <small>{post.date}</small>
                   </header>
-
                 </article>
               </li>
             )
-          )
+          );
         })}
       </ol>
     </Layout>
-  )
-}
+  );
+};
 
-export default BlogIndex
-
-export const pageQuery = graphql`
-  query WordPressPostArchive {
-    allWpPost(sort: { fields: [date], order: DESC }) {
-      nodes {
-        excerpt
-        uri
-        content
-        date(formatString: "MMMM DD, YYYY")
-        title
-        excerpt
-      }
-    }
-  }
-`
+export default BlogIndex;
