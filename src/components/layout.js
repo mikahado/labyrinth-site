@@ -36,8 +36,10 @@ const Layout = ({ isHomePage, children }) => {
       <div>
     <nav>
       <Link to="/">Home</Link>
-      <Link to="/about">About</Link>
-      {/* Add more navigation links as needed */}
+      <Link to="/labyrinth-index">Labyrinth Locator</Link>
+      <Link to="/events">Events</Link>
+      <Link to="/learn">Learn</Link>
+      <Link to="/contact">Contact Us</Link>
     </nav>
     <main>{children}</main>
   </div>

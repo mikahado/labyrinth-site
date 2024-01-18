@@ -4,7 +4,7 @@ import parse from "html-react-parser"
 import { GatsbyImage } from "gatsby-plugin-image"
 
 import Bio from "../components/bio"
-import Layout from "../components/layout"
+import Layout from "../components/Layout"
 import Seo from "../components/seo"
 
 const BlogIndex = ({ data, data: post }) => {

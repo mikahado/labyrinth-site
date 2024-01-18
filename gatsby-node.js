@@ -41,7 +41,7 @@ const createIndividualBlogPostPages = async ({ posts, gatsbyUtilities }) =>
         path: post.uri,
 
         // use the blog post template as the page component
-        component: path.resolve(`./src/templates/blog-post.js`),
+        component: path.resolve(`./src/templates/post.js`),
 
         // `context` is available in the template as a prop and
         // as a variable in GraphQL.
@@ -82,25 +82,13 @@ async function createBlogPostArchive({ posts, gatsbyUtilities }) {
     postsChunkedIntoArchivePages.map(async (_posts, index) => {
       const pageNumber = index + 1
 
-      const getPagePath = page => {
-        if (page > 0 && page <= totalPages) {
-          // Since our homepage is our blog page
-          // we want the first page to be "/" and any additional pages
-          // to be numbered.
-          // "/blog/2" for example
-          return page === 1 ? `/` : `/blog/${page}`
-        }
-
-        return null
-      }
-
       // createPage is an action passed to createPages
       // See https://www.gatsbyjs.com/docs/actions#createPage for more info
       await gatsbyUtilities.actions.createPage({
-        path: getPagePath(pageNumber),
+        path: "/post-archive",
 
         // use the blog post archive template as the page component
-        component: path.resolve(`./src/templates/blog-post-archive.js`),
+        component: path.resolve(`./src/templates/post-archive.js`), // Assuming you have a post-archive.js template
 
         // `context` is available in the template as a prop and
         // as a variable in GraphQL.
@@ -113,8 +101,8 @@ async function createBlogPostArchive({ posts, gatsbyUtilities }) {
           // We need to tell the template how many posts to display too
           postsPerPage,
 
-          nextPagePath: getPagePath(pageNumber + 1),
-          previousPagePath: getPagePath(pageNumber - 1),
+          nextPagePath: "/post-archive", // You might need to update this logic based on your requirements
+          previousPagePath: "/post-archive", // You might need to update this logic based on your requirements
         },
       })
     })

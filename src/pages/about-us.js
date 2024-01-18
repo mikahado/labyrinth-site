@@ -1,9 +1,9 @@
 import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
-import Layout from '../components/layout';
+import Layout from '../components/Layout';
 
 const AboutPage = () => {
-  // Use the useStaticQuery hook to execute the GraphQL query
+
   const data = useStaticQuery(graphql`
     query {
       allWpPage {
@@ -16,8 +16,8 @@ const AboutPage = () => {
     }
   `);
 
-  // Log the data to the console
-  console.log(data);
+  console.log(data)
+
 
   return (
     <Layout>
