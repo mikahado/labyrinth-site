@@ -4,19 +4,6 @@ import Layout from '../components/Layout';
 
 const AboutPage = () => {
 
-  const data = useStaticQuery(graphql`
-    query {
-      allWpPage {
-        nodes {
-          id
-          uri
-          content
-        }
-      }
-    }
-  `);
-
-  console.log(data)
 
 
   return (
@@ -26,5 +13,6 @@ const AboutPage = () => {
     </Layout>
   );
 };
+
 
 export default AboutPage;

@@ -2,14 +2,13 @@ import React from "react";
 import { graphql } from "gatsby";
 import Layout from "../components/Layout";
 
-const LabyrinthIndex = ({ data }) => {
+const LabyrinthLocator = ({ data }) => {
   // Extract content from the GraphQL query response
   const labyrinthContent = data.allWpPage.nodes[0]?.content;
   
-
   return (
     <Layout>
-      <h1>Original Labyrinth Index</h1>
+      <h1>Labyrinth Index</h1>
       <div dangerouslySetInnerHTML={{ __html: labyrinthContent }} />
     </Layout>
   );
@@ -27,4 +26,4 @@ export const query = graphql`
   }
 `
 
-export default LabyrinthIndex;
+export default LabyrinthLocator;

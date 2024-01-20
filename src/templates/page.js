@@ -3,7 +3,6 @@ import { graphql } from "gatsby"
 import { GatsbyImage } from "gatsby-plugin-image"
 import parse from "html-react-parser"
 
-import Bio from "../components/bio"
 import Layout from "../components/Layout"
 import Seo from "../components/seo"
 
