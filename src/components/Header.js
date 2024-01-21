@@ -1,16 +1,29 @@
 import React from 'react'
-import { Link } from 'gatsby'
+import { Link, useStaticQuery, graphql } from "gatsby"
+import parse from "html-react-parser"
 // import Logo from '../../images/logo.svg'
-import useMenuQuery from '../hooks/useMenuQuery'
 
-
-const Header = () => {
-
-    const data = useMenuQuery()
-    console.log(data)
-
+const Header = ( {isHomePage}) => {
+  const {
+    wp: {
+      generalSettings: { title },
+    },
+  } = useStaticQuery(graphql`
+    query LayoutQuery {
+      wp {
+        generalSettings {
+          title
+          description
+        }
+      }
+    }
+  `)
   return (
-    <div>Header</div>
+    <div>
+       <header className="global-header">
+       <h1>Labyrinth Resrouce Group</h1>
+      </header>
+    </div>
   )
 }
 
