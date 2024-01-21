@@ -256,7 +256,23 @@ a:focus {
 
 .global-header {
   margin-bottom: var(--spacing-12);
-  background-color: #808080;
+  background-color: white;
+}
+
+.global-nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60px; /* Adjust as needed */
+  background-color: white;
+}
+
+.global-nav a {
+  margin: 0 15px; /* Adjust spacing between navigation items */
+  text-decoration: none;
+  color: var(--color-heading); /* Adjust the color */
+  font-weight: var(--fontWeight-bold);
+  font-size: var(--fontSize-2);
 }
 
 .main-heading {
@@ -336,4 +352,14 @@ a:focus {
   ol {
     list-style-position: inside;
   }
+
+  .global-nav {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .global-nav a {
+    margin: 10px 0; /* Adjust spacing */
+  }
+
 }
