@@ -18,6 +18,7 @@ const HomePage = ({ data }) => {
     <img src="" alt="" />
     <h1>Labyrinth Resrouce Group</h1>
     <h4>Encouraging the creation and use of Labyrinths as part of healing, inspiration, and peace</h4>
+    <hr/>
     </div>
     <h2>Upcoming Event</h2>
     <h2>Recent Events</h2>
