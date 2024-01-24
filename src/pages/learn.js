@@ -8,7 +8,6 @@ const learn = () => {
   return (
     <Layout>
     <div>
-    <img src="" alt="" />
     <h1>Learn</h1>
     <h4>Encouraging the creation and use of Labyrinths as part of healing, inspiration, and peace</h4>
     </div>

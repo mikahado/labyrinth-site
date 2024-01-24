@@ -12,12 +12,7 @@ const HomePage = ({ data }) => {
   return (
     <Layout>
       <div>
-        <img src="" alt="" />
-        <h4>
-          Encouraging the creation and use of Labyrinths as part of healing,
-          inspiration, and peace
-        </h4>
-        <hr />
+
         <br />
         <div>
           <p style={{ textIndent: "2em", textAlign: "justify" }}>
