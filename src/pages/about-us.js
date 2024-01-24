@@ -8,7 +8,9 @@ const AboutPage = () => {
 
   return (
     <Layout>
-      <h1>About Page</h1>
+            <div className="title-container">
+        <h1 className="title-text">About LRG</h1>
+      </div>
       {/* Add your about page content here */}
     </Layout>
   );

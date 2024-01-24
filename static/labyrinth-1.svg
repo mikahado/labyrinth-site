@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 320 290" xmlns="http://www.w3.org/2000/svg">
+	<title>Cretan Labyrinth</title>
+	<g transform="scale(10) translate(17 20)">
+		<rect x="-17" y="-20" width="32" height="29" fill="#fff"/>
+		<path d="M-4 4a8 8 0 0 1 -8 -8a11 11 0 1 1 22 0a6 6 0 0 1 -6 6a2 2 0 1 0 0 4a10 10 0 0 0 10 -10a15 15 0 1 0 -30 0a12 12 0 0 0 12 12a4 4 0 0 0 4 -4v-8a1 1 0 1 0 -2 0a2 2 0 1 1 -4 0a5 5 0 1 1 10 0M-4 -4a3 3 0 1 1 6 0a2 2 0 1 0 4 0a7 7 0 1 0 -14 0a4 4 0 0 0 4 4h8a4 4 0 0 0 4 -4a9 9 0 1 0 -18 0a6 6 0 0 0 6 6a2 2 0 1 1 0 4a10 10 0 0 1 -10 -10a13 13 0 1 1 26 0a8 8 0 0 1 -8 8M-3 0a3 3 0 0 0 3 -3a3 3 0 0 0 3 3a3 3 0 0 0 -3 3a3 3 0 0 0 -3 -3zM-2 -4v1a1 1 0 0 1 -1 1h-1M-4 2h1a1 1 0 0 1 1 1v1M2 4v-1a1 1 0 0 1 1 -1h1M4 -2h-1a1 1 0 0 1 -1 -1v-1" fill="none" stroke="#000" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
+	</g>
+</svg>

@@ -68,6 +68,17 @@ module.exports = {
       },
     },
 
+    {
+      resolve: `gatsby-plugin-google-fonts`,
+      options: {
+        fonts: [
+          `lato`,
+
+        ],
+        display: 'swap'
+      }
+    },
+
     // See https://www.gatsbyjs.com/plugins/gatsby-plugin-react-helmet/?=gatsby-plugin-react-helmet
     `gatsby-plugin-react-helmet`,
 
@@ -76,5 +87,6 @@ module.exports = {
      * To learn more, visit: https://gatsby.dev/offline
      */
     // `gatsby-plugin-offline`,
+
   ],
 }

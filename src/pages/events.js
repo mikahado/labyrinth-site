@@ -22,7 +22,11 @@ const EventsPage = ({ data }) => {
   return (
     <Layout isHomePage>
       <Seo title="All posts" />
-      <h1>Events</h1>
+      <div className="title-container">
+    
+        <h1 className="title-text">Events</h1>
+    
+      </div>
       <h4> Walk with us! </h4>
       <hr/>
       <ol style={{ listStyle: `none` }}>
