@@ -81,7 +81,7 @@ body {
   font-family: 'Lato', sans-serif;
   font-size: var(--fontSize-1);
   color: var(--color-text);
-  background-color: #abb8c3;
+  background-color: white;
   margin: 0;
 }
 
@@ -172,6 +172,7 @@ p {
   --x-height-multiplier: 0.35;
   margin: var(--spacing-0) var(--spacing-0) var(--spacing-8) var(--spacing-0);
   padding: var(--spacing-0);
+  text-align: center;
 }
 
 ul,
@@ -325,11 +326,30 @@ a:focus {
   position: relative;
   z-index: 1;
   opacity: 0;
-  animation: fadeIn 1s ease forwards;
-  font-size: 9vw; /* Adjust the font size to your preference */
-  text-transform: uppercase; /* Convert text to uppercase */
-  letter-spacing: 0.5vw; /* Adjust the letter spacing */
-  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4);
+  animation: fadeIn 0.7s ease forwards;
+  font-size: 5vw; 
+  text-transform: uppercase; 
+  letter-spacing: 0.5vw; 
+  text-shadow: 
+    1px 1px 2px rgba(0, 0, 0, 0.2), 
+    2px 2px 4px rgba(0, 0, 0, 0.3), 
+    3px 3px 6px rgba(0, 0, 0, 0.4), 
+    -1px -1px 2px rgba(255, 255, 255, 0.5);
+  -webkit-text-stroke: 0.7px black; 
+}
+
+
+@media (max-width: 768px) {
+  .title-text {
+    font-size: 9vw; /* Adjust font size for smaller screens */
+  }
+}
+
+/* Adjust font size for larger screens */
+@media (min-width: 1200px) {
+  .title-text {
+    font-size: 5vw; /* Adjust font size for larger screens */
+  }
 }
 
 .main-heading {
@@ -419,4 +439,27 @@ a:focus {
     margin: 10px 0; /* Adjust spacing */
   }
 
+}
+
+.show-hide-button {
+  display: none; 
+}
+
+
+@media (max-width: 767px) {
+  .show-hide-button {
+    display: block; 
+  }
+}
+
+.banner-container {
+  width: 100%;
+  height: 300px; /* Adjust the height as needed */
+  overflow: hidden;
+}
+
+.banner-container img {
+  width: 100%;
+  height: auto;
+  object-fit: cover; /* Zooms in to cover the container */
 }

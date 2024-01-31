@@ -70,7 +70,7 @@ const LabyrinthLocator = ({ data }) => {
         })}
       </ol>
 
-      <ul>
+      {/* <ul>
   <li>Classic Labyrinth</li>
   <li>Medieval Labyrinth</li>
   <li>Chartres Labyrinth</li>
@@ -117,7 +117,7 @@ const LabyrinthLocator = ({ data }) => {
   <li>Aquarium Labyrinth</li>
   <li>Chocolate Labyrinth</li>
   <li>Golden Labyrinth</li>
-</ul>
+</ul> */}
 
 
     </Layout>
