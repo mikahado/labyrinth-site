@@ -5,7 +5,6 @@ import Layout from "../components/Layout";
 import parse from "html-react-parser";
 import { GatsbyImage } from "gatsby-plugin-image";
 
-import Bio from "../components/bio";
 import Seo from "../components/seo";
 
 const LabyrinthLocator = ({ data }) => {
@@ -15,7 +14,6 @@ const LabyrinthLocator = ({ data }) => {
     return (
       <Layout isHomePage>
         <Seo title="All posts" />
-        <Bio />
         <p>No posts found.</p>
       </Layout>
     );

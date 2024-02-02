@@ -457,22 +457,30 @@ a:focus {
   justify-content: center;
   align-items: center;
   overflow: hidden;
+  margin: 0 auto; /* Center the container horizontally */
+  padding: 0; /* Remove any default padding */
 }
 
+
 .banner-container img {
-  max-width: 50%;
+  max-width: 100%;
   height: auto;
 }
 
-/* .lrg-content {
+.lrg-content {
   display: flex;
-  flex-direction: column;
+  flex-direction: column; /* Change from 'left' to 'column' */
   align-items: flex-start; 
-} */
+}
+
+.lrg-content p {
+  text-align: left;
+}
 
 
 .lrg-content img {
   display: block;
   margin: 0 auto; 
   max-width: 100%; 
+
 }

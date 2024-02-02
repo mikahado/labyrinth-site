@@ -4,7 +4,6 @@ import parse from "html-react-parser"
 import { GatsbyImage } from "gatsby-plugin-image"
 import { useStaticQuery, graphql } from "gatsby"
 
-import Bio from "../components/bio"
 import Layout from "../components/Layout"
 import Seo from "../components/seo"
 
@@ -35,7 +34,6 @@ const BlogIndex = () => {
     return (
       <Layout isHomePage>
         <Seo title="All posts" />
-        <Bio />
         <p>No posts found.</p>
       </Layout>
     );
@@ -44,7 +42,7 @@ const BlogIndex = () => {
   return (
     <Layout isHomePage>
       <Seo title="All posts" />
-      <Bio />
+   
       <h2>Archive of LGR posts</h2>
       <ol style={{ listStyle: `none` }}>
         {posts.map(post => {
