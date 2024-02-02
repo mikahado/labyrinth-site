@@ -3,8 +3,7 @@ import { Link, graphql } from "gatsby"
 import Layout from "../components/Layout"
 import parse from "html-react-parser"
 import { GatsbyImage } from "gatsby-plugin-image"
-import Header from "../components/Header"
-import Navigation from "../components/Navigation"
+
 
 const HomePage = ({ data }) => {
   const posts = data.allWpPost.nodes

@@ -1,44 +1,31 @@
-import React, { useState } from 'react'
-import { Link, useStaticQuery, graphql } from "gatsby"
-import parse from "html-react-parser"
-import Navigation from './Navigation'
-// import Logo from '../../images/logo.svg'
+import React from 'react';
+import { useStaticQuery, graphql } from "gatsby";
 
-const Header = ( {isHomePage}) => {
-
-
-
-  const {
-    wp: {
-      generalSettings: { title },
-    },
-  } = useStaticQuery(graphql`
-    query LayoutQuery {
-      wp {
-        generalSettings {
-          title
-          description
+const Header = ({ isHomePage }) => {
+  const bannerData = useStaticQuery(graphql`
+    query MyQuery {
+      allWpMediaItem(filter: { id: { eq: "cG9zdDoxODc4" } }) {
+        edges {
+          node {
+            id
+            sourceUrl
+          }
         }
       }
     }
-  `)
-  
-  
-  
+  `);
+
+  const bannerUrl = bannerData.allWpMediaItem.edges[0]?.node.sourceUrl;
+
   return (
     <div>
-       <header className="global-header">
-       <h1>Labyrinth Resrouce Group</h1>
-
-       <p>
-          Being different. Being one.
-        </p>
-
-
-        
+      <header className="global-header">
+        <div className="banner-container">
+          {bannerUrl && <img src={bannerUrl} alt="Banner" />}
+        </div>
       </header>
     </div>
-  )
-}
+  );
+};
 
-export default Header
+export default Header;

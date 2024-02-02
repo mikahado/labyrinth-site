@@ -26,12 +26,13 @@ const LabyrinthLocator = ({ data }) => {
       <Seo title="All posts" />
 
       <div className="title-container">
-        <h1 className="title-text">Labyrinth Locator</h1>
+        <h1 className="title-text">Labyrinths</h1>
       </div>
+      <p>Find a labyrinth.</p>
       
 
 
-      <h4>A growing database of labyrinths in the New Mexico</h4>
+      <h4>A database of labyrinths in the American Southwest</h4>
       <hr></hr>
       <ol style={{ listStyle: `none` }}>
         {posts.map(post => {

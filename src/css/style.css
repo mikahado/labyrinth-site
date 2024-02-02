@@ -453,13 +453,26 @@ a:focus {
 }
 
 .banner-container {
-  width: 100%;
-  height: 300px; /* Adjust the height as needed */
+  display: flex;
+  justify-content: center;
+  align-items: center;
   overflow: hidden;
 }
 
 .banner-container img {
-  width: 100%;
+  max-width: 50%;
   height: auto;
-  object-fit: cover; /* Zooms in to cover the container */
+}
+
+/* .lrg-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; 
+} */
+
+
+.lrg-content img {
+  display: block;
+  margin: 0 auto; 
+  max-width: 100%; 
 }

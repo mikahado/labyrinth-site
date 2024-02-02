@@ -12,7 +12,7 @@ const Navigation = () => {
         <Link to="/labyrinth-locator">Labyrinths</Link>
         <Link to="/events">Events</Link>
         <Link to="/learn">Learn</Link>
-        <Link to="/contact">Contact Us</Link>
+        <Link to="/contact">Contact</Link>
     </nav>
     <hr/>
     <br/>
